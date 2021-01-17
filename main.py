@@ -8,7 +8,7 @@ from random import randrange
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('pepega.ui', self)
+        uic.loadUi('UI.ui', self)
         self.setWindowTitle('Git и желтые окружности')
         self.pushButton.clicked.connect(self.paint)
         self.do_paint = False

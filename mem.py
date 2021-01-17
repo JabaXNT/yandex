@@ -7,7 +7,7 @@ from random import randrange
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(591, 459)
+        MainWindow.resize(600, 500)
         font = QtGui.QFont()
         font.setPointSize(18)
         MainWindow.setFont(font)
@@ -59,9 +59,9 @@ class MyWidget(QMainWindow, Ui_MainWindow):
 
     def draw_flag(self, qp):
         for i in range(25):
-            self.diam = randrange(0, 120)
+            self.diam = randrange(0, 100)
             qp.setBrush(QColor(randrange(0, 255), randrange(0, 255), randrange(0, 255)))
-            qp.drawEllipse(randrange(0, 400), randrange(0, 400), self.diam, self.diam)
+            qp.drawEllipse(randrange(0, 500), randrange(100, 400), self.diam, self.diam)
 
 
 def except_hook(cls, exception, traceback):
