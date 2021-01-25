@@ -4,6 +4,7 @@ from PyQt5.QtGui import QPainter, QColor
 from PyQt5 import QtCore, QtGui, QtWidgets
 from random import randrange
 
+# новый коммит-новая жизнь
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -60,8 +61,10 @@ class MyWidget(QMainWindow, Ui_MainWindow):
     def draw_flag(self, qp):
         for i in range(25):
             self.diam = randrange(0, 100)
-            qp.setBrush(QColor(randrange(0, 255), randrange(0, 255), randrange(0, 255)))
-            qp.drawEllipse(randrange(0, 500), randrange(100, 400), self.diam, self.diam)
+            qp.setBrush(QColor(randrange(0, 255),
+                               randrange(0, 255), randrange(0, 255)))
+            qp.drawEllipse(randrange(0, 500), randrange(
+                100, 400), self.diam, self.diam)
 
 
 def except_hook(cls, exception, traceback):
