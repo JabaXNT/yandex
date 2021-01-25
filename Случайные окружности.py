@@ -4,7 +4,6 @@ from PyQt5.QtGui import QPainter, QColor
 from PyQt5 import QtCore, QtGui, QtWidgets
 from random import randrange
 
-# новый коммит-новая жизнь
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
