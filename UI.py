@@ -1,33 +1,13 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from flask import Flask
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(591, 459)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        MainWindow.setFont(font)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 10, 201, 51))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 591, 21))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+app = Flask(__name__)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "СОЗДАТЬ КРУГИ"))
+@app.route('/')
+@app.route('/index')
+def index():
+    return "Привет, Яндекс!"
+
+
+if __name__ == '__main__':
+    app.run(port=8080, host='127.0.0.1')
